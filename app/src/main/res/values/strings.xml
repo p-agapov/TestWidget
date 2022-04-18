@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TestWidget</string>
+
+    <string name="widget_button_text">Press me</string>
 </resources>
