@@ -2,4 +2,6 @@
     <string name="app_name">TestWidget</string>
 
     <string name="widget_button_text">Press me</string>
+    <string name="config_edit_text_hint">Button text</string>
+    <string name="config_button_text">Confirm</string>
 </resources>

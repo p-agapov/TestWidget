@@ -18,8 +18,15 @@ class TestAppWidgetProvider : AppWidgetProvider() {
             val pendingIntent = PendingIntent.getActivity(
                 context, 0, Intent(context, MainActivity::class.java), 0
             )
+
+            val buttonText =
+                context?.getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE)?.getString(
+                    KEY_BUTTON_TEXT + appWidgetId, context.getString(R.string.widget_button_text)
+                )
+
             val remoteViews = RemoteViews(context?.packageName, R.layout.widget_test).apply {
                 setOnClickPendingIntent(R.id.widget_button, pendingIntent)
+                setCharSequence(R.id.widget_button, "setText", buttonText)
             }
             appWidgetManager?.updateAppWidget(appWidgetId, remoteViews)
         }
